@@ -137,3 +137,11 @@ input:not(:checked)+label>.slider {
     height: 0;
   }
 }
+
+@media all and (min-width: 820px) and (max-width: 1023px) {
+  /*tablet*/
+}
+
+@media all and (min-width: 1023px) {
+  /*descktop*/
+}
