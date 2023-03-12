@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
 :root {
-  --color-one: #b5ead7;
+  --color-one: #130e23;
   --color-two: #364b44;
   --color-three: #99b0a8;
   --color-four: #dedbff;
   --color-five: #a6a4ca;
-  --mem-width: 64rem;
-  --mem-height: min(64rem, calc(100vw - 2rem));
-  --bayan-width: 30rem;
+  --text-color: #c2e6ef;
+  --mem-width: 36rem;
+  --mem-height: min(36rem, calc(100vw - 2rem));
+  --bayan-width: 64rem;
   --desc-width: 25rem;
   --slide-duration: 1.3s;
   --text-duration: 0.5s;
   --text-l-height: 1.5em;
 
 }
+
+
+
 
 
 * {
@@ -37,11 +43,13 @@ li {
 
 
 body {
-
+  font-family: 'Rubik', sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: var(--color-one);
+  color: var(--text-color);
 }
 
 input,
@@ -51,19 +59,25 @@ select {
   font: inherit;
 }
 
-* {
-  outline: thick solid rgba(255, 0, 0, 0.2)
-}
-
-
 main {
   margin: 1rem auto;
   width: var(--mem-width);
-  max-width: 90%;
+  max-width: 100%;
+}
+
+.head {
+  display: block;
+  width: 100%;
+  height: 5rem;
+  background: url(./assets/header.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 1rem 0;
 }
 
 ul.item-list {
-  max-width: 64rem;
+  max-width: var(--mem-width);
   margin: 0 auto;
 }
 
@@ -83,6 +97,7 @@ img[src$=".svg"] {
 }
 
 
+
 input {
   display: none;
 }
@@ -93,6 +108,12 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0 0.5rem;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #45186b;
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0px 7px 16px 0px rgba(41, 53, 108, 0.25);
 }
 
 label>h2 {
@@ -122,6 +143,42 @@ input:not(:checked)+label>.slider {
   animation: details-hide var(--slide-duration) ease-in-out;
   height: 0;
 }
+
+.control {
+  display: block;
+  width: var(--text-l-height);
+  height: var(--text-l-height);
+  background: url(./assets/control.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+
+  opacity: 0;
+}
+
+label:active>.control {
+  transform: rotate(-1.25turn);
+  -webkit-transform: rotate(-1.25turn);
+  -moz-transform: rotate(-1.25turn);
+  -ms-transform: rotate(-1.25turn);
+  -o-transform: rotate(-1.25turn);
+
+}
+
+input:checked~label>.control {
+  transform: rotate(-1.5turn);
+  -webkit-transform: rotate(-1.5turn);
+  -moz-transform: rotate(-1.5turn);
+  -ms-transform: rotate(-1.5turn);
+  -o-transform: rotate(-1.5turn);
+}
+
 
 @keyframes details-show {
   0% {
@@ -182,6 +239,10 @@ input:not(:checked)+label>.slider {
   input:not(:checked)+label:not(:hover)>h2 {
     animation: text-hide var(--text-duration) ease-in-out;
     height: var(--text-l-height);
+  }
+
+  ul:hover .control {
+    opacity: 1;
   }
 }
 
