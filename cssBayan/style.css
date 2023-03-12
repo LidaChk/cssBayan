@@ -7,8 +7,8 @@
   --color-four: #dedbff;
   --color-five: #a6a4ca;
   --text-color: #c2e6ef;
-  --mem-width: 36rem;
-  --mem-height: min(36rem, calc(100vw - 2rem));
+  --mem-width: 38rem;
+  --mem-height: min(38rem, calc(100vw - 2rem));
   --bayan-width: 64rem;
   --desc-width: 25rem;
   --slide-duration: 1.3s;
@@ -108,7 +108,7 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 1rem 1rem;
 
   margin-bottom: 1rem;
   border-radius: 0.5rem;
