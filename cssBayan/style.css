@@ -1,18 +1,127 @@
+:root {
+  --color-one: #b5ead7;
+  --color-two: #364b44;
+  --color-three: #99b0a8;
+  --color-four: #dedbff;
+  --color-five: #a6a4ca;
+  --mem-width: 64rem;
+  --bayan-width: 30rem;
+  --desc-width: 25rem;
+  --slide-duration: 1.3s;
+}
 
 
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
 
 
-/* Images */
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+
+body {
+
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+* {
+  outline: thick solid rgba(255, 0, 0, 0.2)
+}
+
+
+main {
+  margin: 1rem auto;
+  width: var(--mem-width);
+  max-width: 90%;
+}
+
+ul.item-list {
+  max-width: 64rem;
+  margin: 0 auto;
+}
 
 img {
-    max-width: 100%;
+  max-width: 100%;
+}
+
+img[width][height] {
+  height: auto;
+}
+
+/* Let SVG scale without boundaries */
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+
+input {
+  display: none;
+}
+label {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.slider {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+input:checked+label>.slider {
+  animation: details-show var(--slide-duration) ease-in-out;
+  height: var(--mem-width);
+}
+
+input:not(:checked)+label>.slider {
+  animation:details-hide var(--slide-duration) ease-in-out;
+  height: 0;
+}
+
+@keyframes details-show {
+  0% {
+    height: 0;
   }
-  img[width][height] {
-    height: auto; /* Preserve aspect ratio */
+
+  100% {
+    height: var(--mem-width);
   }
-  /* Let SVG scale without boundaries */
-  img[src$=".svg"] {
-    width: 100%;
-    height: auto;
-    max-width: none;
+}
+
+@keyframes details-hide {
+  0% {
+    height: var(--mem-width);
   }
+
+  100% {
+    height: 0;
+  }
+}
