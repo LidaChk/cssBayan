@@ -125,3 +125,14 @@ input:not(:checked)+label>.slider {
     height: 0;
   }
 }
+
+@media (hover: hover) {
+  input:not(:checked)+label:hover>.slider {
+    animation: details-show var(--slide-duration) ease-in-out;
+    height: var(--mem-width);
+  }
+  input:not(:checked)+label:not(:hover)>.slider {
+    animation:details-hide var(--slide-duration) ease-in-out;
+    height: 0;
+  }
+}
