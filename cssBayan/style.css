@@ -5,6 +5,7 @@
   --color-four: #dedbff;
   --color-five: #a6a4ca;
   --mem-width: 64rem;
+  --mem-height: min(64rem,calc(100vw - 2rem));
   --bayan-width: 30rem;
   --desc-width: 25rem;
   --slide-duration: 1.3s;
@@ -91,14 +92,14 @@ label {
 }
 
 .slider {
-  height: 0;
   overflow: hidden;
-  transition: all 0.3s;
+  transition: all var(--slide-duration);
+  height: 0;
 }
 
 input:checked+label>.slider {
-  animation: details-show var(--slide-duration) ease-in-out;
-  height: var(--mem-width);
+  animation: details-show var(--slide-duration) ease-in-out;  
+  height: var(--mem-height);
 }
 
 input:not(:checked)+label>.slider {
@@ -112,13 +113,13 @@ input:not(:checked)+label>.slider {
   }
 
   100% {
-    height: var(--mem-width);
+    height:  var(--mem-height);
   }
 }
 
 @keyframes details-hide {
   0% {
-    height: var(--mem-width);
+    height:  var(--mem-height);
   }
 
   100% {
@@ -129,7 +130,7 @@ input:not(:checked)+label>.slider {
 @media (hover: hover) {
   input:not(:checked)+label:hover>.slider {
     animation: details-show var(--slide-duration) ease-in-out;
-    height: var(--mem-width);
+    height:  var(--mem-height);
   }
   input:not(:checked)+label:not(:hover)>.slider {
     animation:details-hide var(--slide-duration) ease-in-out;
