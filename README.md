@@ -1,7 +1,6 @@
-#cssBayan #RSSchool
-
+# cssBayan 
+### RSSchool
 
 pure css HTML accordion for RSSchool
-
-https://github.com/DrDiman/CSS-Bayan-task
-
+[task](https://github.com/DrDiman/CSS-Bayan-task)
+[deploy](https://LidaChk.github.io/cssBayan/cssBayan/index.html)
