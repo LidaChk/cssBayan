@@ -5,10 +5,13 @@
   --color-four: #dedbff;
   --color-five: #a6a4ca;
   --mem-width: 64rem;
-  --mem-height: min(64rem,calc(100vw - 2rem));
+  --mem-height: min(64rem, calc(100vw - 2rem));
   --bayan-width: 30rem;
   --desc-width: 25rem;
   --slide-duration: 1.3s;
+  --text-duration: 0.5s;
+  --text-l-height: 1.5em;
+
 }
 
 
@@ -83,12 +86,20 @@ img[src$=".svg"] {
 input {
   display: none;
 }
+
 label {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+label>h2 {
+  height: var(--text-l-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: text-hide var(--text-duration) ease-in-out;
 }
 
 .slider {
@@ -98,12 +109,17 @@ label {
 }
 
 input:checked+label>.slider {
-  animation: details-show var(--slide-duration) ease-in-out;  
+  animation: details-show var(--slide-duration) ease-in-out;
   height: var(--mem-height);
 }
 
+input:checked+label>h2 {
+  height: calc(var(--text-l-height)*3);
+  animation: text-show var(--text-duration) ease-in-out;
+}
+
 input:not(:checked)+label>.slider {
-  animation:details-hide var(--slide-duration) ease-in-out;
+  animation: details-hide var(--slide-duration) ease-in-out;
   height: 0;
 }
 
@@ -113,13 +129,13 @@ input:not(:checked)+label>.slider {
   }
 
   100% {
-    height:  var(--mem-height);
+    height: var(--mem-height);
   }
 }
 
 @keyframes details-hide {
   0% {
-    height:  var(--mem-height);
+    height: var(--mem-height);
   }
 
   100% {
@@ -127,14 +143,45 @@ input:not(:checked)+label>.slider {
   }
 }
 
+@keyframes text-show {
+  0% {
+    height: var(--text-l-height);
+  }
+
+  100% {
+    height: calc(var(--text-l-height)*3);
+  }
+}
+
+@keyframes text-hide {
+  0% {
+    height: calc(var(--text-l-height)*3);
+  }
+
+  100% {
+    height: var(--text-l-height);
+  }
+}
+
 @media (hover: hover) {
   input:not(:checked)+label:hover>.slider {
     animation: details-show var(--slide-duration) ease-in-out;
-    height:  var(--mem-height);
+    height: var(--mem-height);
   }
+
   input:not(:checked)+label:not(:hover)>.slider {
-    animation:details-hide var(--slide-duration) ease-in-out;
+    animation: details-hide var(--slide-duration) ease-in-out;
     height: 0;
+  }
+
+  input:not(:checked)+label:hover>h2 {
+    animation: text-show var(--text-duration) ease-in-out;
+    height: calc(var(--text-l-height)*3);
+  }
+
+  input:not(:checked)+label:not(:hover)>h2 {
+    animation: text-hide var(--text-duration) ease-in-out;
+    height: var(--text-l-height);
   }
 }
 
