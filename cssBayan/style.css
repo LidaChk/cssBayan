@@ -3,9 +3,6 @@
 :root {
   --color-one: #130e23;
   --color-two: #364b44;
-  --color-three: #99b0a8;
-  --color-four: #dedbff;
-  --color-five: #a6a4ca;
   --text-color: #c2e6ef;
   --mem-width: 38rem;
   --mem-height: min(36rem, calc(100vw - 2rem));
@@ -66,7 +63,7 @@ select {
 }
 
 main {
-  margin: 1rem auto;
+  margin: 1em auto;
   width: var(--mem-width);
   max-width: 100%;
 }
@@ -78,7 +75,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  margin: 1rem 0;
+  margin: 1em 0;
 }
 
 ul.item-list {
@@ -115,11 +112,11 @@ label {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
   background-color: #45186b;
   transition: all 0.35s ease-in-out;
-  padding: 0.5rem;
+  padding: 0.5em;
 
 
 }
@@ -133,7 +130,7 @@ label>h4 {
 }
 
 .slider {
-  margin-top: 1rem;
+  margin-top: 1em;
   overflow: hidden;
   transition: all var(--slide-duration);
   height: 0;
@@ -253,7 +250,7 @@ input:checked~label>.control {
     -moz-transform: rotate(1.25turn);
     -ms-transform: rotate(1.25turn);
     -o-transform: rotate(1.25turn);
-    filter: drop-shadow(0 -0.2rem 0.5rem #5ed8d8);
+    filter: drop-shadow(0 -0.2em 0.5em #5ed8d8);
   }
 }
 
@@ -261,24 +258,30 @@ input:checked~label>.control {
 
   /*tablet*/
   .label {
-    padding: 1rem;
+    padding: 1em;
   }
+body{
+  font-size: 1.5rem;
+}
 }
 
 @media all and (min-width: 1023px) {
 
   /*descktop*/
   .head {
-    margin: 1rem 0;
+    margin: 1em 0;
   }
 
   .label {
-    padding: 1rem;
+    padding: 1em;
+  }
+  main{
+    font-size: 1.7rem;
   }
 
 }
 
 
 img{
-  filter: drop-shadow(5 -5rem 5rem #5ed8d8);
+  filter: drop-shadow(5 -5em 5em #5ed8d8);
 }
