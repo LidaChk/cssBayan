@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&display=swap');
 
 :root {
   --color-one: #130e23;
@@ -8,11 +8,11 @@
   --color-five: #a6a4ca;
   --text-color: #c2e6ef;
   --mem-width: 38rem;
-  --mem-height: min(38rem, calc(100vw - 2rem));
+  --mem-height: min(36rem, calc(100vw - 2rem));
   --bayan-width: 64rem;
   --desc-width: 25rem;
-  --slide-duration: 1.3s;
-  --text-duration: 0.5s;
+  --slide-duration: 0.7s;
+  --text-duration: 0.2s;
   --text-l-height: 1.5em;
 
 }
@@ -33,7 +33,7 @@ ul {
 
 body,
 h1,
-h2,
+h4,
 p,
 ul,
 ol,
@@ -43,13 +43,19 @@ li {
 
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'BIZ UDGothic', sans-serif;
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: var(--color-one);
+
   color: var(--text-color);
+  background: #140f22;
+  background: -webkit-linear-gradient(90deg, #261947, #63339c, #140f22);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(90deg, #261947, #63339c, #140f22);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 100%;
 }
 
 input,
@@ -68,8 +74,7 @@ main {
 .head {
   display: block;
   width: 100%;
-  height: 5rem;
-  background: url(./assets/header.svg);
+  height: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -83,6 +88,7 @@ ul.item-list {
 
 img {
   max-width: 100%;
+ 
 }
 
 img[width][height] {
@@ -108,24 +114,26 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem 1rem;
 
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   background-color: #45186b;
   transition: all 0.35s ease-in-out;
- 
+  padding: 0.5rem;
+
 
 }
 
-label>h2 {
+label>h4 {
   height: var(--text-l-height);
   overflow: hidden;
   text-overflow: ellipsis;
   animation: text-hide var(--text-duration) ease-in-out;
+
 }
 
 .slider {
+  margin-top: 1rem;
   overflow: hidden;
   transition: all var(--slide-duration);
   height: 0;
@@ -136,7 +144,7 @@ input:checked+label>.slider {
   height: var(--mem-height);
 }
 
-input:checked+label>h2 {
+input:checked+label>h4 {
   height: calc(var(--text-l-height)*3);
   animation: text-show var(--text-duration) ease-in-out;
 }
@@ -164,14 +172,7 @@ input:not(:checked)+label>.slider {
   opacity: 0;
 }
 
-label:active>.control {
-  transform: rotate(-1.25turn);
-  -webkit-transform: rotate(-1.25turn);
-  -moz-transform: rotate(-1.25turn);
-  -ms-transform: rotate(-1.25turn);
-  -o-transform: rotate(-1.25turn);
 
-}
 
 input:checked~label>.control {
   transform: rotate(-1.5turn);
@@ -233,12 +234,12 @@ input:checked~label>.control {
     height: 0;
   }
 
-  input:not(:checked)+label:hover>h2 {
+  input:not(:checked)+label:hover>h4 {
     animation: text-show var(--text-duration) ease-in-out;
     height: calc(var(--text-l-height)*3);
   }
 
-  input:not(:checked)+label:not(:hover)>h2 {
+  input:not(:checked)+label:not(:hover)>h4 {
     animation: text-hide var(--text-duration) ease-in-out;
     height: var(--text-l-height);
   }
@@ -246,12 +247,55 @@ input:checked~label>.control {
   ul:hover .control {
     opacity: 1;
   }
+  input:not(:checked)+label:hover>.control {
+    transform: rotate(1.25turn);
+    -webkit-transform: rotate(1.25turn);
+    -moz-transform: rotate(1.25turn);
+    -ms-transform: rotate(1.25turn);
+    -o-transform: rotate(1.25turn);
+    filter: drop-shadow(0 -0.2rem 0.5rem #5ed8d8);
+  }
 }
 
 @media all and (min-width: 820px) and (max-width: 1023px) {
+
   /*tablet*/
+  .label {
+    padding: 1rem;
+  }
 }
 
 @media all and (min-width: 1023px) {
+
   /*descktop*/
+  .head {
+    margin: 1rem 0;
+  }
+
+  .label {
+    padding: 1rem;
+  }
+
+}
+
+/* img {
+  -webkit-box-shadow:
+    inset 0 0 50px white,
+    inset 0 0 50px white,
+    inset 0 0 50px white;
+
+  -moz-box-shadow:
+    inset 0 0 50px white,
+    inset 0 0 50px white,
+    inset 0 0 50px white;
+
+  box-shadow:
+    inset 0 0 50px white,
+    inset 0 0 50px white,
+    inset 0 0 50px white;
+} */
+
+
+img{
+  filter: drop-shadow(5 -5rem 5rem #5ed8d8);
 }
