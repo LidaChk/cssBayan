@@ -122,10 +122,10 @@ label {
 }
 
 label>h4 {
-  height: var(--text-l-height);
+  height: var(--text-l-height)*3;
   overflow: hidden;
-  text-overflow: ellipsis;
-  animation: text-hide var(--text-duration) ease-in-out;
+/*   text-overflow: ellipsis;
+  animation: text-hide var(--text-duration) ease-in-out; */
 
 }
 
