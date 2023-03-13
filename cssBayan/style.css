@@ -8,8 +8,8 @@
   --mem-height: min(36rem, calc(100vw - 2rem));
   --bayan-width: 64rem;
   --desc-width: 25rem;
-  --slide-duration: 0.7s;
-  --text-duration: 0.2s;
+  --slide-duration: 0.9s;
+  --text-duration: 0.9s;
   --text-l-height: 1.5em;
 
 }
@@ -85,7 +85,7 @@ ul.item-list {
 
 img {
   max-width: 100%;
- 
+
 }
 
 img[width][height] {
@@ -220,6 +220,22 @@ input:checked~label>.control {
   }
 }
 
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 -0.2rem 0.5rem #5ed8d8);
+  }
+
+  100% {
+    filter: drop-shadow(0 -0.2rem 0.8rem #5ed8d8);
+  }
+}
+
+.label:active>.control,
+.label:active {
+  opacity: 1;
+  animation: 0.9s glow ease-in-out infinite alternate;
+}
+
 @media (hover: hover) {
   input:not(:checked)+label:hover>.slider {
     animation: details-show var(--slide-duration) ease-in-out;
@@ -244,6 +260,7 @@ input:checked~label>.control {
   ul:hover .control {
     opacity: 1;
   }
+
   input:not(:checked)+label:hover>.control {
     transform: rotate(1.25turn);
     -webkit-transform: rotate(1.25turn);
@@ -260,9 +277,10 @@ input:checked~label>.control {
   .label {
     padding: 1em;
   }
-body{
-  font-size: 1.5rem;
-}
+
+  body {
+    font-size: 1.5rem;
+  }
 }
 
 @media all and (min-width: 1023px) {
@@ -275,13 +293,11 @@ body{
   .label {
     padding: 1em;
   }
-  main{
+
+  main {
     font-size: 1.7rem;
   }
 
 }
 
 
-img{
-  filter: drop-shadow(5 -5em 5em #5ed8d8);
-}
