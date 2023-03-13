@@ -296,6 +296,7 @@ input:checked~label>.control {
   /*descktop*/
   .head {
     margin: 1em 0;
+    text-align: center;
   }
 
   .label {
