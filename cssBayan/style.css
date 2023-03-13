@@ -126,6 +126,7 @@ label>h4 {
   overflow: hidden;
 /*   text-overflow: ellipsis;
   animation: text-hide var(--text-duration) ease-in-out; */
+  transition: height  var(--text-duration) ease-in-out;
 
 }
 
@@ -137,17 +138,20 @@ label>h4 {
 }
 
 input:checked+label>.slider {
-  animation: details-show var(--slide-duration) ease-in-out;
+ /*  animation: details-show var(--slide-duration) ease-in-out; */
+ transition: height  var(--slide-duration) ease-in-out;
   height: var(--mem-height);
 }
 
 input:checked+label>h4 {
   height: calc(var(--text-l-height)*3);
-  animation: text-show var(--text-duration) ease-in-out;
+  /* animation: text-show var(--text-duration) ease-in-out; */
+  transition: height  var(--text-duration) ease-in-out;
 }
 
 input:not(:checked)+label>.slider {
-  animation: details-hide var(--slide-duration) ease-in-out;
+  /* animation: details-hide var(--slide-duration) ease-in-out; */
+  transition: height  var(--slide-duration)ease-in-out;
   height: 0;
 }
 
@@ -238,22 +242,26 @@ input:checked~label>.control {
 
 @media (hover: hover) {
   input:not(:checked)+label:hover>.slider {
-    animation: details-show var(--slide-duration) ease-in-out;
+    /* animation: details-show var(--slide-duration) ease-in-out; */
+    transition: height  var(--slide-duration) ease-in-out;
     height: var(--mem-height);
   }
 
   input:not(:checked)+label:not(:hover)>.slider {
-    animation: details-hide var(--slide-duration) ease-in-out;
+    /* animation: details-hide var(--slide-duration) ease-in-out; */
+    transition: height  var(--slide-duration) ease-in-out;
     height: 0;
   }
 
   input:not(:checked)+label:hover>h4 {
-    animation: text-show var(--text-duration) ease-in-out;
+    /* animation: text-show var(--text-duration) ease-in-out; */
+    transition: height  var(--text-duration) ease-in-out;
     height: calc(var(--text-l-height)*3);
   }
 
   input:not(:checked)+label:not(:hover)>h4 {
-    animation: text-hide var(--text-duration) ease-in-out;
+    /* animation: text-hide var(--text-duration) ease-in-out; */
+    transition: height  var(--text-duration) ease-in-out;
     height: var(--text-l-height);
   }
 
