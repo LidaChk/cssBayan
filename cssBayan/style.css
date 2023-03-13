@@ -4,10 +4,8 @@
   --color-one: #130e23;
   --color-two: #364b44;
   --text-color: #c2e6ef;
-  --mem-width: 38rem;
-  --mem-height: min(36rem, calc(100vw - 2rem));
-  --bayan-width: 64rem;
-  --desc-width: 25rem;
+  --mem-width: min(38em, calc(100vw - 4em));
+  --mem-height: min(36em, calc(100vw - 6em));
   --slide-duration: 0.9s;
   --text-duration: 0.9s;
   --text-l-height: 1.5em;
@@ -66,6 +64,7 @@ main {
   margin: 1em auto;
   width: var(--mem-width);
   max-width: 100%;
+  font-size: 0.7rem;
 }
 
 .head {
@@ -124,9 +123,9 @@ label {
 label>h4 {
   height: var(--text-l-height)*3;
   overflow: hidden;
-/*   text-overflow: ellipsis;
+  /*   text-overflow: ellipsis;
   animation: text-hide var(--text-duration) ease-in-out; */
-  transition: height  var(--text-duration) ease-in-out;
+  transition: height var(--text-duration) ease-in-out;
 
 }
 
@@ -138,20 +137,20 @@ label>h4 {
 }
 
 input:checked+label>.slider {
- /*  animation: details-show var(--slide-duration) ease-in-out; */
- transition: height  var(--slide-duration) ease-in-out;
+  /*  animation: details-show var(--slide-duration) ease-in-out; */
+  transition: height var(--slide-duration) ease-in-out;
   height: var(--mem-height);
 }
 
 input:checked+label>h4 {
   height: calc(var(--text-l-height)*3);
   /* animation: text-show var(--text-duration) ease-in-out; */
-  transition: height  var(--text-duration) ease-in-out;
+  transition: height var(--text-duration) ease-in-out;
 }
 
 input:not(:checked)+label>.slider {
   /* animation: details-hide var(--slide-duration) ease-in-out; */
-  transition: height  var(--slide-duration)ease-in-out;
+  transition: height var(--slide-duration)ease-in-out;
   height: 0;
 }
 
@@ -226,11 +225,11 @@ input:checked~label>.control {
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 -0.2rem 0.5rem #5ed8d8);
+    filter: drop-shadow(0 -0.2em 0.5em #5ed8d8);
   }
 
   100% {
-    filter: drop-shadow(0 -0.2rem 0.8rem #5ed8d8);
+    filter: drop-shadow(0 -0.2em 0.8em #5ed8d8);
   }
 }
 
@@ -243,50 +242,57 @@ input:checked~label>.control {
 @media (hover: hover) {
   input:not(:checked)+label:hover>.slider {
     /* animation: details-show var(--slide-duration) ease-in-out; */
-    transition: height  var(--slide-duration) ease-in-out;
+    transition: height var(--slide-duration) ease-in-out;
     height: var(--mem-height);
   }
 
   input:not(:checked)+label:not(:hover)>.slider {
     /* animation: details-hide var(--slide-duration) ease-in-out; */
-    transition: height  var(--slide-duration) ease-in-out;
+    transition: height var(--slide-duration) ease-in-out;
     height: 0;
   }
 
   input:not(:checked)+label:hover>h4 {
     /* animation: text-show var(--text-duration) ease-in-out; */
-    transition: height  var(--text-duration) ease-in-out;
+    transition: height var(--text-duration) ease-in-out;
     height: calc(var(--text-l-height)*3);
   }
 
   input:not(:checked)+label:not(:hover)>h4 {
     /* animation: text-hide var(--text-duration) ease-in-out; */
-    transition: height  var(--text-duration) ease-in-out;
+    transition: height var(--text-duration) ease-in-out;
     height: var(--text-l-height);
   }
 
-  ul:hover .control {
-    opacity: 1;
-  }
+ 
 
-  input:not(:checked)+label:hover>.control {
-    transform: rotate(1.25turn);
-    -webkit-transform: rotate(1.25turn);
-    -moz-transform: rotate(1.25turn);
-    -ms-transform: rotate(1.25turn);
-    -o-transform: rotate(1.25turn);
-    filter: drop-shadow(0 -0.2em 0.5em #5ed8d8);
-  }
+
+    ul:hover .control {
+      opacity: 1;
+    }
+
+    input:not(:checked)+label:hover>.control {
+      transform: rotate(1.25turn);
+      -webkit-transform: rotate(1.25turn);
+      -moz-transform: rotate(1.25turn);
+      -ms-transform: rotate(1.25turn);
+      -o-transform: rotate(1.25turn);
+      filter: drop-shadow(0 -0.2em 0.5em #5ed8d8);
+    }
+
 }
 
-@media all and (min-width: 820px) and (max-width: 1023px) {
+
+
+
+@media all and (min-width: 820px) and (max-width: 1022px) {
 
   /*tablet*/
   .label {
     padding: 1em;
   }
 
-  body {
+  main {
     font-size: 1.5rem;
   }
 }
@@ -304,9 +310,7 @@ input:checked~label>.control {
   }
 
   main {
-    font-size: 1.7rem;
+    font-size: 2rem;
   }
 
 }
-
-
