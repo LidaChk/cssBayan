@@ -240,6 +240,12 @@ input:checked~label>.control {
 }
 
 @media (hover: hover) {
+
+  li,
+  label {
+    cursor: pointer;
+  }
+
   input:not(:checked)+label:hover>.slider {
     /* animation: details-show var(--slide-duration) ease-in-out; */
     transition: height var(--slide-duration) ease-in-out;
@@ -264,21 +270,21 @@ input:checked~label>.control {
     height: var(--text-l-height);
   }
 
- 
 
 
-    ul:hover .control {
-      opacity: 1;
-    }
 
-    input:not(:checked)+label:hover>.control {
-      transform: rotate(1.25turn);
-      -webkit-transform: rotate(1.25turn);
-      -moz-transform: rotate(1.25turn);
-      -ms-transform: rotate(1.25turn);
-      -o-transform: rotate(1.25turn);
-      filter: drop-shadow(0 -0.2em 0.5em #5ed8d8);
-    }
+  ul:hover .control {
+    opacity: 1;
+  }
+
+  input:not(:checked)+label:hover>.control {
+    transform: rotate(1.25turn);
+    -webkit-transform: rotate(1.25turn);
+    -moz-transform: rotate(1.25turn);
+    -ms-transform: rotate(1.25turn);
+    -o-transform: rotate(1.25turn);
+    filter: drop-shadow(0 -0.2em 0.5em #5ed8d8);
+  }
 
 }
 
