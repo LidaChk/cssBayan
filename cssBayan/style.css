@@ -89,6 +89,9 @@ main {
   background-size: contain;
   margin: 1em 0;
   text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
+  
 }
 
 ul.item-list {
