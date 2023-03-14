@@ -156,7 +156,7 @@ label {
 }
 
 label>h4 {
-  height: var(--text-l-height)*3;
+  height: var(--text-l-height);
   overflow: hidden;
   /*   text-overflow: ellipsis;
   animation: text-hide var(--text-duration) ease-in-out; */
