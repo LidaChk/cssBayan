@@ -299,24 +299,29 @@ input:checked~label>.control {
   }
 
   main {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 @media all and (min-width: 1023px) {
 
   /*descktop*/
+  :root {
+    --mem-width: 38rem;
+    --mem-height: 36rem;
+  }
+
   .head {
     margin: 1em 0;
     text-align: center;
   }
 
   .label {
-    padding: 1em;
+    padding: 1rem;
   }
 
   main {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
 }
