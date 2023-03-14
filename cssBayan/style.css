@@ -51,19 +51,37 @@ body {
   color: var(--text-color);
 
   background-color: #140f22;
-  background-image: url("./assets/lbg_50.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
+  background-image: url("./assets/lbg_317.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
   background-repeat: no-repeat, repeat, repeat;
   background-position:  0% 100%, 0 0, center;
   background-blend-mode: lighten;
   background-attachment: fixed;
-  background-size: 100vmin, auto, auto;
-}
-
-body {
-  background-image: url("./assets/lbg_317.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
+  background-size: 100vmin, auto, auto; 
+  animation: start1 2s ease-in-out;
 }
 
 
+@keyframes start {
+  0%{
+    background-blend-mode: color-burn;
+  }
+  50% {
+    background-blend-mode: darken;
+  }
+ 100% {
+    background-blend-mode: lighten;
+  }
+}
+  @keyframes start1 {
+    0%{
+      background-position:  -100% 0, 0 0, center;
+    }
+   100% {
+    background-position:  0 100%, 0 0, center;
+    }
+  
+  
+}
 
 
 input,
