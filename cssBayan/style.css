@@ -9,7 +9,8 @@
   --slide-duration: 0.9s;
   --text-duration: 0.9s;
   --text-l-height: 1.5em;
-
+  --lbg: "./assets/lbg370.png";
+  --lbg-50: "./assets/lbg50.png";
 }
 
 
@@ -36,6 +37,9 @@ li {
   margin: 0;
 }
 
+* {
+  margin: 0;
+}
 
 body {
   font-family: 'BIZ UDGothic', sans-serif;
@@ -45,13 +49,22 @@ body {
   line-height: 1.5;
 
   color: var(--text-color);
-  background: #140f22;
-  background: -webkit-linear-gradient(90deg, #261947, #63339c, #140f22);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(90deg, #261947, #63339c, #140f22);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-size: 100%;
+
+  background-color: #140f22;
+  background-image: url("./assets/lbg_50.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: bottom left, top left, center;
+  background-blend-mode: lighten;
+  background-attachment: fixed;
+  background-size: 100vmin, auto, auto;
 }
+
+body {
+  background-image: url("./assets/lbg_317.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
+}
+
+
+
 
 input,
 button,
@@ -75,6 +88,7 @@ main {
   background-position: center;
   background-size: contain;
   margin: 1em 0;
+  text-transform: uppercase;
 }
 
 ul.item-list {
@@ -304,6 +318,11 @@ input:checked~label>.control {
 @media all and (min-width: 820px) and (max-width: 1022px) {
 
   /*tablet*/
+  body {
+
+    background-image: url("./assets/lbg_470.png"),url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
+  }
+
   .label {
     padding: 1em;
   }
@@ -319,15 +338,27 @@ input:checked~label>.control {
   :root {
     --mem-width: 38rem;
     --mem-height: 36rem;
+
+
+  }
+
+  body {
+
+    background-image: url("./assets/lbg.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
   }
 
   .head {
     margin: 1em 0;
     text-align: center;
+    text-transform: uppercase;
   }
 
   .label {
     padding: 1rem;
+  }
+
+  body {
+    background-size: min(calc(50wv-20rem), 100vmin), auto, auto;
   }
 
   main {
