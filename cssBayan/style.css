@@ -53,7 +53,7 @@ body {
   background-color: #140f22;
   background-image: url("./assets/lbg_50.png"), url("./assets/filter.svg"), linear-gradient(90deg, #261947, #63339c, #140f22);
   background-repeat: no-repeat, repeat, repeat;
-  background-position: bottom left, top left, center;
+  background-position:  0% 100%, 0 0, center;
   background-blend-mode: lighten;
   background-attachment: fixed;
   background-size: 100vmin, auto, auto;
