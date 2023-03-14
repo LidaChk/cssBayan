@@ -106,18 +106,18 @@ input {
 
 label {
   width: 100%;
-  display: flex;
+  /*   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas: "h4 control" "img img";
   margin-bottom: 1em;
   border-radius: 0.5em;
   background-color: #45186b;
   transition: all 0.35s ease-in-out;
   padding: 0.5em;
-
-
 }
 
 label>h4 {
@@ -126,7 +126,16 @@ label>h4 {
   /*   text-overflow: ellipsis;
   animation: text-hide var(--text-duration) ease-in-out; */
   transition: height var(--text-duration) ease-in-out;
+  grid-area: h4;
 
+}
+
+label>.control {
+  grid-area: control;
+}
+
+label>.slider {
+  grid-area: img;
 }
 
 .slider {
